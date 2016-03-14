@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Assignment 1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+	
+	<script type="text/javascript">
+
+
+		var myApp=angular.module("myModule",[]);
+		myApp.controller("myController",function($scope){
+			var employee={name:"Taylor",employeeId:1361,designation:"Manager"};
+			$scope.employee=employee;
+		});
+	</script>
+</head>
+<body>
+<div ng-app="myModule">
+	<div ng-controller="myController">
+		<h3>This Assignment performs uppercase filtering</h3>
+		<label>Name</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+		<input type="text" ng-model="employee.name"><br>
+		<label>Employee ID</label>&nbsp:
+		<input type="text" ng-model="employee.employeeId"><br>
+		<label>Designation</label>&nbsp&nbsp:
+		<input type="text" ng-model="employee.designation"><br>
+		<hr>
+		<h4>The Details of the employee is:</h4>
+		<table class="table">
+			<tr>
+				<td>Employee Name</td>
+				<td>{{employee.name|uppercase}}</td>
+			</tr>
+			<tr>
+				<td>Employee ID</td>
+				<td>{{employee.employeeId}}</td>
+			</tr>
+			<tr>
+				<td>Employee Designation</td>
+				<td>{{employee.designation|uppercase}}</td>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+
+</body>
+
+</html>
